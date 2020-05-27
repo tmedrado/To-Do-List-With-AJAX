@@ -1,0 +1,10 @@
+var categoryType = document.getElementById('Category').value
+
+
+if (categoryType == 1){
+    document.getElementById("Western").insertAdjacentHTML("beforeend", "<li><%= @task.title  %>, to read: <%= @task.deadline.strftime('%D')  %> </li>")
+    } else if (categoryType == 2){
+        document.getElementById("Legend").insertAdjacentHTML("beforeend", "<li><%= @task.title  %> </li>")
+        } else {
+            document.getElementById("Fantasy").insertAdjacentHTML("beforeend", "<li><%= @task.title  %> </li>")
+            }
