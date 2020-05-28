@@ -17,3 +17,6 @@ require 'faker'
     my_task.save
   end
 end
+5.times do 
+  Email.create(subject:Faker::Book.title , body: Faker::Company.bs)
+end

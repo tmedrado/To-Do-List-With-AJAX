@@ -1,0 +1,62 @@
+<div class="container">
+    <div class='row'>
+        <div class='col'>
+            <div id="new-emails">
+                <center>
+                    <h1>Emails List</h1>
+                </center>
+            </div>
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Subject</td>
+                    </tr>
+                </thead>
+                <tbody id="tablebody">
+                    <% Email.all.each do |email| %>
+                    <tr>
+                        <td class='id'><%= email.id%></td>
+                        <td><%= email.subject%></td>
+
+                    </tr>
+                    <% end %>
+                </tbody>
+
+            </table>
+            <%= form_tag(emails_path, method: "create", class: "form", id: "contact-form", remote: true)  do %>
+            <%= submit_tag("Recieve Email", class: "create btn btn-success") %>
+            <% end %>
+
+        </div>
+        <div class='col'>
+
+            <div id="emails-checked">
+                <center>
+                    <h1>Emails Checked</h1>
+                </center>
+            </div>
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Subject</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+
+</div>
