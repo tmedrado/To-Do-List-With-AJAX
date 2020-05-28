@@ -15,8 +15,17 @@ class EmailsController < ApplicationController
         format.js {}
       end
     end
+  end
 
-  
+  def show
+    @email = Email.find(params[:id])
+    
+  end
+
+  private
+
+  def email_params
+    params.require(:email).permit(:id, :subject, :body)
   end
 
 end

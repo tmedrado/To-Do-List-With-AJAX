@@ -19,12 +19,14 @@
                     <tr>
                         <td class='id'><%= email.id%></td>
                         <td><%= email.subject%></td>
-
+                        <td><a href="<%= email_path(email.id)%>" class="sshow btn btn-primary">Show </a></td>
+                        <td class='btn btn-primary'><%= link_to "Show", email_path(email.id),class:'sshow',  :remote => true %></td>
                     </tr>
                     <% end %>
                 </tbody>
 
             </table>
+
             <%= form_tag(emails_path, method: "create", class: "form", id: "contact-form", remote: true)  do %>
             <%= submit_tag("Recieve Email", class: "create btn btn-success") %>
             <% end %>
